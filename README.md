@@ -4,6 +4,7 @@ Scaled Quadratic Radial Basis (Activation) Function.
 $f(x) = a * exp(-b * ||x - c||^2) + d$
 
 ```
+
 class SQ_RBF(torch.nn.Module):
     def __init__(self, in_features, out_features):
         super(SQ_RBF, self).__init__()
@@ -27,12 +28,14 @@ class SQ_RBF(torch.nn.Module):
         x = -x
         x = torch.exp(x)
         return x
+
 ```
 
 ```
+
 class SQ_RBF(torch.nn.Module):
     def __init__(self, a, b, c, d):
-        super().__init__()
+        super(SQ_RBF, self).__init__()
         self.a = a
         self.b = b
         self.c = c
@@ -41,4 +44,5 @@ class SQ_RBF(torch.nn.Module):
     def forward(self, x):
         distance = torch.norm(x - self.c, dim=-1)
         return self.a * torch.exp(-self.b * distance**2) + self.d
-        ```
+
+```
