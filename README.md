@@ -30,7 +30,7 @@ class SQ_RBF(torch.nn.Module):
 ```
 
 ```
-class SQRBF(torch.nn.Module):
+class SQ_RBF(torch.nn.Module):
     def __init__(self, a, b, c, d):
         super().__init__()
         self.a = a
