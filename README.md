@@ -1,6 +1,8 @@
 # SQ-RBF_pytorch
 Scaled Quadratic Radial Basis (Activation) Function.
 
+$f(x) = a * exp(-b * ||x - c||^2) + d$
+
 ```
 class SQ_RBF(torch.nn.Module):
     def __init__(self, in_features, out_features):
