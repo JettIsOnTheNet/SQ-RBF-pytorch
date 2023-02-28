@@ -28,3 +28,17 @@ class SQ_RBF(torch.nn.Module):
         x = torch.exp(x)
         return x
 ```
+
+```
+class SQRBF(torch.nn.Module):
+    def __init__(self, a, b, c, d):
+        super().__init__()
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+        
+    def forward(self, x):
+        distance = torch.norm(x - self.c, dim=-1)
+        return self.a * torch.exp(-self.b * distance**2) + self.d
+        ```
